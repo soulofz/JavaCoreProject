@@ -28,17 +28,17 @@ public class Main {
         int command = scanner.nextInt();
         if (command == 1) {
             try {
-                List<Transfer> operations = parserService.parseFiles("input", "archive" , reportService);
-                for (Transfer operation:operations){
-                    try{
-                        transferService.transfer(operation.getAccFrom(),operation.getAccTo(),operation.getAmount());
-                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(),operation.getAmount(), "Успешно.");
-                    }catch (TransferException | InvalidAmountException e){
-                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(),operation.getAmount(), "Ошибка:" +e.getMessage());
+                List<Transfer> operations = parserService.parseFiles("input", "archive", reportService);
+                for (Transfer operation : operations) {
+                    try {
+                        transferService.transfer(operation.getAccFrom(), operation.getAccTo(), operation.getAmount());
+                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(), operation.getAmount(), "Успешно.");
+                    } catch (TransferException | InvalidAmountException e) {
+                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(), operation.getAmount(), "Ошибка:" + e.getMessage());
                     }
                 }
                 transferService.saveAccounts("accounts.txt");
-            }catch (IOException e){
+            } catch (IOException e) {
                 System.out.println("Ошибка обработки данных.");
             }
         } else if (command == 2) {

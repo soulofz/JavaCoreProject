@@ -18,7 +18,7 @@ public class ReportService {
             String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));
             bufferedWriter.write(time + " | " + file + " | перевод с " + accFrom + " | на " + accTo + " " + amount + " | " + status);
             bufferedWriter.newLine();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Ошибка записи в отчет: " + e.getMessage());
         }
     }
