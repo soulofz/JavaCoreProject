@@ -1,8 +1,8 @@
-2025-08-20 20-15-37 | transfer1.txt | перевод с 11111-11111 | на 22222-22222 300 | Успешно.
-2025-08-20 20-15-37 | transfer1.txt | перевод с 22222-22222 | на 33333-33333 100 | Успешно.
-2025-08-20 20-15-37 | transfer1.txt | перевод с 11111-11111 | на 33333-33333 -50 | Ошибка:Сумма должна быть положительной.
-2025-08-20 20-15-37 | transfer1.txt | перевод с 44444-44444 | на 11111-11111 100 | Ошибка:Неверный номер счета.
-2025-08-20 20-15-37 | transfer2.txt | перевод с 11111-11111 | на 22222-22222 300 | Ошибка:Недостаточно средств.
-2025-08-20 20-15-37 | transfer2.txt | перевод с 22222-22222 | на 33333-33333 100 | Успешно.
-2025-08-20 20-15-37 | transfer2.txt | перевод с 33333-33333 | на 44444-44444 -50 | Ошибка:Неверный номер счета.
-2025-08-20 20-15-37 | transfer2.txt | перевод с 44444-44444 | на 11111-11111 100 | Ошибка:Неверный номер счета.
+2025-08-20 20-15-37 | transfer1.txt | transfer from 11111-11111 | to 22222-22222 300 | Successfully.
+2025-08-20 20-15-37 | transfer1.txt | transfer from 22222-22222 | to 33333-33333 100 | Successfully.
+2025-08-20 20-15-37 | transfer1.txt | transfer from 11111-11111 | to 33333-33333 -50 | Exception:Amount must be positive.
+2025-08-20 20-15-37 | transfer1.txt | transfer from 44444-44444 | to 11111-11111 100 | Exception:Invalid account number.
+2025-08-20 20-15-37 | transfer2.txt | transfer from 11111-11111 | to 22222-22222 300 | Exception:Insufficient funds.
+2025-08-20 20-15-37 | transfer2.txt | transfer from 22222-22222 | to 33333-33333 100 | Successfully.
+2025-08-20 20-15-37 | transfer2.txt | transfer from 33333-33333 | to 44444-44444 -50 | Exception:Invalid account number.
+2025-08-20 20-15-37 | transfer2.txt | transfer from 44444-44444 | to 11111-11111 100 | Exception:Invalid account number.

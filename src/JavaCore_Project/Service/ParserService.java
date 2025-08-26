@@ -46,7 +46,7 @@ public class ParserService {
                     try {
                         amount = Integer.parseInt(parts[2].trim());
                     } catch (NumberFormatException e) {
-                        reportService.log(file.getName(), accFrom, accTo, amount, "Ошибка :" + e.getMessage());
+                        reportService.log(file.getName(), accFrom, accTo, amount, "Exception :" + e.getMessage());
                         continue;
                     }
                     transfers.add(new Transfer(accFrom, accTo, amount, file.getName()));

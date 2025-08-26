@@ -36,15 +36,15 @@ public class TransferService {
 
     public void transfer(String accountFrom, String accountTo, int amount) throws TransferException {
         if (!accounts.containsKey(accountFrom) || !accounts.containsKey(accountTo)) {
-            throw new TransferException("Неверный номер счета.");
+            throw new TransferException("Invalid account number.");
         }
         if (amount <= 0) {
-            throw new InvalidAmountException("Сумма должна быть положительной.");
+            throw new InvalidAmountException("The amount must be positive.");
         }
         Account accFrom = accounts.get(accountFrom);
         Account accTo = accounts.get(accountTo);
         if (accFrom.getBalance() < amount) {
-            throw new InvalidAmountException("Недостаточно средств.");
+            throw new InvalidAmountException("Insufficient funds.");
         }
         accFrom.withdraw(amount);
         accTo.deposit(amount);

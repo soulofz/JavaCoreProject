@@ -21,10 +21,10 @@ public class Main {
         try {
             transferService.loadAccounts("accounts.txt");
         } catch (IOException e) {
-            System.out.println("Невалидный номер счета.");
+            System.out.println("Invalid account number.");
             return;
         }
-        System.out.println("Введите номер операции для выполнения: (1 - обработать файлы из input | 2 - показать отчет)");
+        System.out.println("Enter the operation number to perform: (1 - process files from input | 2 - show report)");
         int command = scanner.nextInt();
         if (command == 1) {
             try {
@@ -32,17 +32,17 @@ public class Main {
                 for (Transfer operation : operations) {
                     try {
                         transferService.transfer(operation.getAccFrom(), operation.getAccTo(), operation.getAmount());
-                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(), operation.getAmount(), "Успешно.");
+                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(), operation.getAmount(), "Successfully.");
                     } catch (TransferException | InvalidAmountException e) {
-                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(), operation.getAmount(), "Ошибка:" + e.getMessage());
+                        reportService.log(operation.getInputFile(), operation.getAccFrom(), operation.getAccTo(), operation.getAmount(), "Exception:" + e.getMessage());
                     }
                 }
                 transferService.saveAccounts("accounts.txt");
             } catch (IOException e) {
-                System.out.println("Ошибка обработки данных.");
+                System.out.println("Data processing error.\n");
             }
         } else if (command == 2) {
-            System.out.println("Смотри файл 'report.txt'");
+            System.out.println("See file 'report.txt'");
         }
     }
 }
