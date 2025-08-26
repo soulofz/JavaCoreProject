@@ -69,9 +69,9 @@
 ##### Run:
 ###### java -cp out JavaCore_Project.Main
 
-## ▶️ Usage
+## ▶️ Usage 
 
-### After launching the program will ask:
+### After launching the program will ask: 
 
 #### Enter the operation number to perform:
 ##### 1 - process files from input
