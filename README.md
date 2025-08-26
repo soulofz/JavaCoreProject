@@ -1,101 +1,101 @@
-# 🏦 JavaCore Project – Банковские переводы
+# 🏦 JavaCore Project – Bank transfers
 
-## 📌 Описание
+## 📌 Description
 
-#### Проект реализует простую систему обработки банковских переводов без базы данных, только на Java Core.
+#### The project implements a simple system for processing bank transfers without a database, only on Java Core.
 
-## Основные возможности:
+## Main features:
 
-* ###### Хранение счетов и их балансов в текстовом файле (accounts.txt);
-* ###### Чтение переводов из входных файлов (input/*.txt);
-* ###### Выполнение переводов между счетами;
-* ###### Запись результата в отчёт (report.txt);
-* ###### Архивирование обработанных файлов в папку archive.
+* ###### Storing accounts and their balances in a text file (accounts.txt);
+* ###### Reading translations from input files (input/*.txt);
+* ###### Making transfers between accounts;
+* ###### Recording the result in a report (report.txt);
+* ###### Archiving processed files into the archive folder.
 
-## 📂 Структура проекта
+## 📂 Project structure
 
 #### JavaCore_Project/
-##### ├── accounts.txt           # Файл со счетами (номер;баланс)
-##### ├── input/                 # Входные файлы с операциями
-##### ├── archive/               # Сюда перемещаются обработанные файлы
-##### ├── report.txt             # Отчёт о всех операциях
+##### ├── accounts.txt           # File with accounts (number;balance)
+##### ├── input/                 # Input files with operations
+##### ├── archive/               # Processed files are moved here
+##### ├── report.txt             # Report on all operations
 ##### ├── src/JavaCore_Project/
-##### │   ├── Main.java          # Точка входа
-##### │   ├── Model/             # Модели (Account, Transfer)
-##### │   ├── Service/           # Сервисы (ParserService, TransferService, ReportService)
-##### │   └── Exceptions/        # Пользовательские исключения
+##### │   ├── Main.java          # Entry point
+##### │   ├── Model/             # Models (Account, Transfer)
+##### │   ├── Service/           # Services(ParserService, TransferService, ReportService)
+##### │   └── Exceptions/        # Custom exceptions
 
-## 📑 Формат файлов
+## 📑 File Format
 
 ### accounts.txt
 
-##### Файл хранит список счетов:
+##### The file stores a list of accounts:
 ###### 1001;5000
 ###### 1002;3000
 ###### 1003;7000
 
-##### Где:
-###### 1001 – номер счёта
-###### 5000 – баланс
+##### Where:
+###### 1001 – account number
+###### 5000 – balance
 
-### Входные файлы в папке input
-##### Каждая строка – перевод:
+### Input files in the input folder
+##### Each line is a translation:
 ###### 1001;1002;1000
 ###### 1003;1002;500
 ###### 1002;1001;200
 
-##### Где:
-###### 1001 – счёт отправителя
-###### 1002 – счёт получателя
-###### 1000 – сумма перевода
+##### Where:
+###### 1001 – sender's account
+###### 1002 – recipient's account
+###### 1000 – transfer amount
 
-##### `Ошибочные строки (неверный формат, отрицательная сумма, несуществующий счёт) попадут в report.txt с пометкой Ошибка.`
+##### `Exception lines (incorrect format, negative amount, non-existent account) will be included in report.txt with the Exception mark.`
 
 ### report.txt
 
-##### После выполнения программа пишет лог:
+##### After execution, the program writes a log:
 
-###### date&time | input1.txt | from:1001 | to:1002 | amount:1000 | Успешно.
-###### date&time | input1.txt | from:1003 | to:1002 | amount:9000 | Ошибка: Недостаточно средств.
+###### date&time | input1.txt | from:1001 | to:1002 | amount:1000 | Successfully.
+###### date&time | input1.txt | from:1003 | to:1002 | amount:9000 | Exception:Insufficient funds.
 
-## 🚀 Запуск проекта
+## 🚀 Project launch
 
-##### Убедитесь, что у вас установлен Java 17+
+##### Make sure you have Java 17+ installed
 ###### java -version
 
-##### Скомпилируйте проект:
+##### Compile the project:
 ###### javac -d out src/JavaCore_Project/**/*.java
 
-##### Запустите:
+##### Run:
 ###### java -cp out JavaCore_Project.Main
 
-## ▶️ Использование
+## ▶️ Usage
 
-### После запуска программа спросит:
+### After launching the program will ask:
 
-#### Введите номер операции для выполнения:
-##### 1 - обработать файлы из input
-##### 2 - показать отчет
+#### Enter the operation number to perform:
+##### 1 - process files from input
+##### 2 - show report
 
-###### 1 → выполняет все переводы из input, формирует отчёт и переносит обработанные файлы в archive.
+###### 1 → performs all translations from input, generates a report and transfers processed files to archive.
 
-###### 2 → выводит подсказку, где смотреть report.txt.
+###### 2 → displays a hint where to look for report.txt
 
-## ⚠️ Обработка ошибок
+## ⚠️ Exception Handling
 
-#### Неверный счёт → запись в отчёт: Ошибка: Неверный номер счета
-#### Недостаточно средств → запись: Ошибка: Недостаточно средств
-#### Неверный формат строки во входном файле → запись: Ошибка: некорректная строка
-#### Программа не прерывается при ошибках — все операции фиксируются в report.txt.
+#### Invalid account → report entry: Exception: Invalid account number
+#### Insufficient funds → entry: Exception: Insufficient funds
+#### Invalid line format in input file → entry: Exception: Invalid line
+#### The program does not terminate on errors - all operations are recorded in report.txt
 
-## 🛠️ Технологии
+## 🛠️ Technologies
 
 #### Java Core
 
-#### Работа с файлами (java.io, java.nio.file)
+#### Working with files (java.io, java.nio.file)
 
-#### Исключения (IOException, NumberFormatException (кастомные TransferException, InvalidAmountException))
+#### Exceptions (IOException, NumberFormatException (кастомные TransferException, InvalidAmountException))
 
-#### Коллекции (HashMap, List)
+#### Collections (HashMap, List)
 
-### 📌 Этот проект демонстрирует основы работы с файлами, коллекциями, исключениями и структурой Java-приложений без использования базы данных.
+### 📌 This project demonstrates the basics of working with files, collections, exceptions, and the structure of Java applications without using a database.
