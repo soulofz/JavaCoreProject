@@ -1,41 +1,41 @@
 package JavaCore_Project.Model;
 
 public class Transfer {
-    private final String accFrom;
-    private final String accTo;
-    private final int amount;
-    private final String inputFile;
+    private final String ACCFROM;
+    private final String ACCTO;
+    private final int AMOUNT;
+    private final String INPUTFILE;
 
     public Transfer(String accFrom, String accTo, int amount, String inputFile) {
-        this.accFrom = accFrom;
-        this.accTo = accTo;
-        this.amount = amount;
-        this.inputFile = inputFile;
+        this.ACCFROM = accFrom;
+        this.ACCTO = accTo;
+        this.AMOUNT = amount;
+        this.INPUTFILE = inputFile;
     }
 
     public String getAccFrom() {
-        return accFrom;
+        return ACCFROM;
     }
 
     public String getAccTo() {
-        return accTo;
+        return ACCTO;
     }
 
     public int getAmount() {
-        return amount;
+        return AMOUNT;
     }
 
     public String getInputFile() {
-        return inputFile;
+        return INPUTFILE;
     }
 
     @Override
     public String toString() {
         return "Transfer{" +
-                "accFrom='" + accFrom + '\'' +
-                ", accTo='" + accTo + '\'' +
-                ", amount=" + amount +
-                ", inputFile='" + inputFile + '\'' +
+                "accFrom='" + ACCFROM + '\'' +
+                ", accTo='" + ACCTO + '\'' +
+                ", amount=" + AMOUNT +
+                ", inputFile='" + INPUTFILE + '\'' +
                 '}';
     }
 }

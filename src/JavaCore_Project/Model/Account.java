@@ -3,12 +3,12 @@ package JavaCore_Project.Model;
 import JavaCore_Project.Exceptions.InvalidAmountException;
 
 public class Account {
-    private final String number;
+    private final String NUMBER;
     private int balance;
 
     public Account(String number, int balance) {
         this.balance = balance;
-        this.number = number;
+        this.NUMBER = number;
     }
 
     public int getBalance() {
@@ -16,7 +16,7 @@ public class Account {
     }
 
     public String getNumber() {
-        return number;
+        return NUMBER;
     }
 
     public void deposit(int amount) {
@@ -37,6 +37,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return number + ";" + balance;
+        return NUMBER + ";" + balance;
     }
 }

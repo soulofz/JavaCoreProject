@@ -19,7 +19,7 @@ public class ReportService {
             bufferedWriter.write(time + " | " + file + " | transfer from " + accFrom + " | to " + accTo + " " + amount + " | " + status);
             bufferedWriter.newLine();
         } catch (IOException e) {
-            System.out.println("Ошибка записи в отчет: " + e.getMessage());
+            System.out.println("Exception report entry: " + e.getMessage());
         }
     }
 }
