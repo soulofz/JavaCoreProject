@@ -44,5 +44,6 @@ public class Main {
         } else if (command == 2) {
             System.out.println("See file 'report.txt'");
         }
+        scanner.close();
     }
 }
